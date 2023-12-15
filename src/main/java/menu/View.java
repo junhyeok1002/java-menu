@@ -30,4 +30,24 @@ public class View {
         return cant_eat;
     }
 
+    public static void Result_Print(List<Integer> forcheck, List<Person> people){
+        // 첫줄
+        System.out.println("[ 구분 | 월요일 | 화요일 | 수요일 | 목요일 | 금요일 ]");
+
+        // 둘째줄
+        System.out.print("[ " + "카테고리");
+        for (Integer i : forcheck) {
+            Menu menu = Menu.values()[i - 1];
+            String food = menu.getKorean_name();
+            System.out.print(" | " + food);
+        }
+        System.out.println(" ]");
+
+        // 다음 줄들
+        for (Person p : people) {
+            p.print();
+        }
+    }
+
+
 }
